@@ -1,0 +1,22 @@
+class Solution {
+public:
+    ListNode* doubleIt(ListNode* head) {
+        ListNode* temp=head;
+        if(head->val>4){
+            ListNode* node=new ListNode(1);
+            node->next=head;
+            head=node;
+        }
+        while(temp!=NULL){
+            int carry=0;
+            if(temp->next!=NULL && temp->next->val>4){
+                carry=1;
+            }
+            int newvalue=(temp->val*2+carry)%10;
+            temp->val=newvalue;
+            temp=temp->next;
+        }
+        return head;
+        
+    }
+};
