@@ -6,14 +6,14 @@ A subsequence is a string that can be derived from another string by deleting so
 class Solution {
 public:
     int appendCharacters(string s, string t) {
-        int j=0,i=0;
+        int i=0,j=0;
         while(i<s.length() && j<t.length()){
             if(s[i]==t[j]){
-                i++;
-            }
                 j++;
+            }
+                i++;
         }
-        return t.length()-i;
+        return t.length()-j;
        
     }
 };
